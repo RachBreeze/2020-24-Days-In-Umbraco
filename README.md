@@ -10,7 +10,7 @@ Umbraco is referenced because deployments of ClientDependency.config requires a 
 The credentials for the Umbraco Backoffice are:
 - Username: hello@breeze.me.uk (this is an unmonitored email address)
 - Password: Advent2020!
-The database usefd is SQLServerCe.  There is no data in Umbraco as the article is about configuration fikes :-)
+The database used is SQLServerCe.  There is no data in Umbraco as the article is about configuration fikes :-) and this database has been used to ensure quick builds of the site for anyone running the project.
 
 ## Maintenance and Warranties
-As the code in this repostiroy is written to support an article which talks about configuration files, there are currently no plans to upgrade the versions of the NuGet packages referenced with in the code base.
+As the code in this repository is written to support an article which talks about configuration files, there are currently no plans to upgrade the versions of the NuGet packages referenced with in the code base.
