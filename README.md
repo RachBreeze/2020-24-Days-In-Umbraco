@@ -6,6 +6,8 @@ The solution utilise Umbraco 8.9.1.  You can read more about Umbraco here https:
 
 Umbraco is referenced because deployments of ClientDependency.config requires a transform to ensure that the latest scripts and css are visible on Umbraco websites.
 
+The front end of the Umbraco website is empty, only the back office is avaialble on /Umbraco.
+
 ### Login to the Umbraco Backoffice
 The credentials for the Umbraco Backoffice are:
 - Username: hello@breeze.me.uk (this is an unmonitored email address)

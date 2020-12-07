@@ -1,0 +1,37 @@
+﻿@inherits UmbracoViewPage
+
+@using System.Collections.Generic;
+
+@{
+    IPublishedContent homePage = Model.Root();
+    IPublishedContent articleList = homePage.Children.Where(x => x.ContentType.Alias == "articleList" && x.IsVisible()).FirstOrDefault();
+    IEnumerable<IPublishedContent> articles = articleList.Children.Where(x => x.IsVisible() && x.ContentType.Alias == "article").OrderByDescending(x => x.Value<DateTime>("articleDate"));
+    int itemsToShow = Model.Id == homePage.Id ? 3 : 99;
+}
+
+<div class="article-list">
+    <div class="container">
+        <div class="intro">
+            <h2 class="text-center">@(Model.Value<string>("latestArticlesTitle"))</h2>
+            <p class="text-center">@(Model.Value<string>("latestArticlesSubtitle"))</p>
+        </div>
+        @if (articles.Any())
+        {
+            <div class="row articles">
+                @foreach (IPublishedContent item in articles.OrderByDescending(x => x.Value<DateTime>("articleDate")).Take(itemsToShow))
+                {
+                    string imageUrl = item.Value<IPublishedContent>("mainImage")?.GetCropUrl(720,455) ?? "/img/carousel.jpg";
+                    string title = item.HasValue("title") ? item.Value<string>("title") : item.Name;
+                    string description = item.Value<string>("metaDescription");
+
+                    <div class="col-md-4 col-sm-6 item">
+                        <a href="@item.Url"><img class="img-responsive" src="@imageUrl"></a>
+                        <h3 class="name"><a href="@item.Url">@title</a></h3>
+                        <p class="description">@description</p>
+                        <a href="@item.Url" class="action"><i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>
