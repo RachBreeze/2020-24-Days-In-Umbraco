@@ -366,7 +366,17 @@
       <IsTransformFile>true</IsTransformFile>
     </None>
     <Content Include="Media\Web.config" />
-    <Content Include="config\umbracoSettings.config" />
+    <Content Include="config\umbracoSettings.config">
+      <TransformOnBuild>true</TransformOnBuild>
+    </Content>
+    <None Include="config\umbracoSettings.Debug.config">
+      <DependentUpon>umbracoSettings.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
+    <None Include="config\umbracoSettings.Release.config">
+      <DependentUpon>umbracoSettings.config</DependentUpon>
+      <IsTransformFile>true</IsTransformFile>
+    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
