@@ -1,5 +1,5 @@
 # Configuration files: Testing,Transforming and Deploying
-Code in this repository supports an article I have written for 24 days in Umbraco that discusses how to test, transform and deploy configuration files for .NET Framework.
+Code in this repository supports an article I have written for 24 days in Umbraco that discusses how to test, transform and deploy configuration files for .NET Framework - [Configuration Files: Creating, Testing and Deploying in Azure DevOps](https://24days.in/umbraco-cms/2020/configuration-files/).
 
 ## Solution contents
 The solution utilise Umbraco 8.9.1.  You can read more about Umbraco here https://umbraco.com/
